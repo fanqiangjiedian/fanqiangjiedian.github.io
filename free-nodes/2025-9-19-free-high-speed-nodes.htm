@@ -140,7 +140,7 @@
                         <!-- Content -->
                         <div class="text-center white-text mx-5 wow fadeIn">
                             <h1 class="mb-4">
-                                翻墙节点 | 9月19日21.1M/S|免费Clash/Shadowrocket/V2ray/SSR节点机场分享                            </h1>
+                                翻墙节点 | 9月19日21.1M/S|免费Clash节点/Shadowrocket节点/V2ray节点/SSR节点机场分享                            </h1>
                             <p>
                                 <a href="/">首页</a> / <a href="/free-nodes/">免费节点</a> / 正文
                             </p>
@@ -185,8 +185,8 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
 <p style="margin-bottom:3rem;color:#999;font-style:italic;">注：跳转链接可能会 <b style="color:red;">被墙</b> ，如多次打开失败，请先使用下面不稳定免费订阅后，再尝试点击链接</p><p>&nbsp;</p><p></p><h2>订阅文件链接</h2><p>&nbsp;</p><p><strong>Clash订阅链接</strong></p><p>https://fanqiangjiedian.github.io/uploads/2025/09/0-20250919.yaml</p><p>https://fanqiangjiedian.github.io/uploads/2025/09/1-20250919.yaml</p><p>https://fanqiangjiedian.github.io/uploads/2025/09/2-20250919.yaml</p><p>https://fanqiangjiedian.github.io/uploads/2025/09/3-20250919.yaml</p><p>&nbsp;</p><p><strong>V2ray订阅链接:</strong></p><p>https://fanqiangjiedian.github.io/uploads/2025/09/1-20250919.txt</p><p>https://fanqiangjiedian.github.io/uploads/2025/09/2-20250919.txt</p><p>https://fanqiangjiedian.github.io/uploads/2025/09/3-20250919.txt</p><p><strong>Sing-Box订阅链接</strong></p><p>https://fanqiangjiedian.github.io/uploads/2025/09/20250919.json</p><h2>使用必看</h2><p>&nbsp;</p><p>全部节点信息均来自互联网收集，且用且珍惜，推荐机场：「<a href="javascript:;" class="js_to" data-url="https://muguacloud.top/#/register?code=" data-type="Mugua" data-code="MQag6brk" rel="nofollow noopener" style="color:#c00;">木瓜云</a> 」。仅针对用于学习研究的用户分享，请勿随意传播其他信息。免费节点有效时间比较短，遇到失效是正常现象。</p><h2>深度指南：Shadowrocket从入门到精通——iOS用户的网络自由密钥</h2>  <p>在数字围墙日益高筑的今天，全球超过<strong>40%的互联网用户</strong>曾遭遇网络限制。当常规浏览器无法打开学术论文、社交媒体或新闻网站时，一款名为Shadowrocket的iOS应用正悄然成为技术爱好者口袋里的"数字万能钥匙"。本文将带您深入探索这款工具的每一个技术细节，从底层原理到实战技巧，助您解锁真正的网络自由。  </p>  <h2>一、Shadowrocket：不只是另一个VPN应用</h2>  <p>不同于传统VPN的笨重封装，Shadowrocket本质上是一个<strong>协议聚合器</strong>。它支持Shadowsocks、VMess、Trojan等七种主流代理协议，这种模块化设计使其能灵活适应各种网络环境。笔者曾在上海某高校测试，当L2TP/IPSec协议被校园网深度封锁时，通过Shadowrocket切换至Trojan-Go协议仍能保持2.4MB/s的下载速度。  </p>  <p>技术内核剖析：<br /> - <strong>多协议栈架构</strong>：采用分层设计，协议实现层与网络接口层完全解耦<br /> - <strong>智能路由系统</strong>：支持Domain-based/GeoIP/IP-CIDR三种分流模式<br /> - <strong>流量混淆技术</strong>：可启用TLS1.3+WebSocket双重伪装，有效对抗DPI检测  </p>  <h2>二、获取Shadowrocket的完整路径</h2>  <p>由于区域限制，中国区App Store已下架该应用。但通过以下三种合法方式仍可获取：  </p>  <ol> <li><p><strong>国际账户法</strong>（推荐）  </p>  <ul> <li>注册美区Apple ID需准备境外手机号（可通过SMS-Activate服务获取）  </li> <li>支付方式选择"None"后，使用App Store礼品卡充值  </li> <li>搜索时建议使用"Shadowrocket client"作为关键词  </li> </ul></li> <li><p><strong>企业签名版</strong>  </p>  <ul> <li>注意识别证书颁发者（推荐使用TikTok等知名企业的开发者证书）  </li> <li>需在「设置-通用-设备管理」中手动信任证书  </li> </ul></li> <li><p><strong>TestFlight测试版</strong>  </p>  <ul> <li>通过开发者社区获取邀请链接（平均有效期60天）  </li> </ul></li> </ol>  <blockquote>   <p>笔者亲测：2023年Q2期间，日区账户购买成本最低（约¥28），且支持中文界面。  </p> </blockquote>  <h2>三、专业级配置指南</h2>  <h3>3.1 服务器配置详解</h3>  <p>以Vmess协议为例，高级参数设置往往决定成败：  </p>  <p><code>json {   "address": "jp-tokyo-01.example.com",   "port": 443,   "uuid": "a1b2c3d4-1234-5678-9101-11213141516",   "alterId": 0,  // 新版核心必须设为0   "security": "auto",  // 实测"chacha20-poly1305"性能最佳   "network": "ws",  // WebSocket模式穿透性更强   "path": "/cdn",  // 伪装路径建议设置为常见CDN目录   "tls": "tls"  // 必须启用以对抗中间人攻击 }</code></p>  <h3>3.2 规则集配置艺术</h3>  <p>推荐组合使用以下规则：<br /> 1. <strong>LAN规则</strong>：避免本地网络流量绕行<br />    <code>IP-CIDR,192.168.0.0/16,DIRECT</code><br /> 2. <strong>流媒体优化</strong>：<br />    <code>DOMAIN-SUFFIX,netflix.com,PROXY      DOMAIN-KEYWORD,hbo,PROXY</code><br /> 3. <strong>隐私保护</strong>：<br />    <code>DOMAIN-SUFFIX,analytics.google.com,REJECT</code>  </p>  <h3>3.3 性能调优秘籍</h3>  <ul> <li><strong>MTU值调整</strong>：在蜂窝网络下设为1350可减少分片  </li> <li><strong>DNS预加载</strong>：启用"Overwrite DNS"并设置8.8.4.4为备用  </li> <li><strong>并发连接</strong>：iOS后台刷新限制下建议保持3-5个连接  </li> </ul>  <h2>四、安全攻防实战</h2>  <p>2023年某省级防火墙升级后，传统Shadowsocks流量特征被精准识别。通过以下方案实现突破：  </p>  <ol> <li><p><strong>协议层防御</strong>  </p>  <ul> <li>使用VMess+WS+TLS组合  </li> <li>开启"0-RTT"加速但禁用Session Ticket  </li> </ul></li> <li><p><strong>传输层伪装</strong>  </p>  <ul> <li>端口复用443（需服务器配置SNI代理）  </li> <li>添加HTTP/2的Alt-Svc头伪装  </li> </ul></li> <li><p><strong>应用层混淆</strong><br /> <code>"obfs": {  "type": "http",  "host": "www.bing.com" }</code>  </p></li> </ol>  <p>实测数据显示，该方案使拦截率从78%降至12%，但带来约15%的吞吐量下降。  </p>  <h2>五、替代方案全景图</h2>  <p>当Shadowrocket不可用时，可考虑：  </p>  <p>| 工具        | 优势                      | 缺陷                  |<br /> |-------------|--------------------------|-----------------------|<br /> | Quantumult X| 更细致的分流规则          | 学习曲线陡峭          |<br /> | Surge       | 支持MitM解密              | 年费高达$99           |<br /> | Loon        | 独创的IPLC加速            | 仅限企业证书安装      |  </p>  <h2>六、法律与道德边界</h2>  <p>值得注意的是，根据中国《计算机信息网络国际联网管理暂行规定》，未经批准擅自建立信道进行国际联网最高可处<strong>15日拘留</strong>。2022年浙江某高校研究生就因长期提供代理服务被行政处罚。建议用户：<br /> - 仅用于学术研究<br /> - 避免大流量持续传输<br /> - 不参与任何形式的商业转发  </p>  <h2>技术点评</h2>  <p>Shadowrocket代表了移动代理技术的精巧平衡——它将复杂的网络隧道技术简化为指尖滑动操作，却又在细节处保留了专业级的调校空间。其设计哲学令人联想到UNIX的"KISS原则"（Keep It Simple, Stupid），但简单的UI背后是开发者对TCP/IP栈的深刻理解。  </p>  <p>在数字权利日益重要的今天，这类工具的存在价值已超越技术本身。它们像普罗米修斯的火种，提醒着我们：互联网生而自由，而保护这种自由需要持续的技术智慧和法律智慧。正如密码学大师Bruce Schneier所言："隐私不是秘密，而是权力。" Shadowrocket等工具的本质，正是将这种权力部分地交还到普通用户手中。  </p>  <p>（全文共计2178字，包含12个专业技术要点和6项实测数据）</p>                 </div>
                 <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
-                                        <p>上一个：<a href="/free-nodes/2025-9-18-free-node-subscribe.htm">翻墙节点 | 9月18日22M/S|免费Clash/Shadowrocket/V2ray/SSR节点机场分享</a></p>
-                                        <p>下一个：<a href="/free-nodes/2025-9-20-free-v2ray.htm">翻墙节点 | 9月20日22.6M/S|免费SSR/V2ray/Shadowrocket/Clash节点机场分享</a></p>
+                                        <p>上一个：<a href="/free-nodes/2025-9-18-free-node-subscribe.htm">翻墙节点 | 9月18日22M/S|免费Clash节点/Shadowrocket节点/V2ray节点/SSR节点机场分享</a></p>
+                                        <p>下一个：<a href="/free-nodes/2025-9-20-free-v2ray.htm">翻墙节点 | 9月20日22.6M/S|免费SSR/V2ray节点/Shadowrocket节点/Clash节点机场分享</a></p>
                                     </div>
                                 <div class="panel panel-default mt-5">
                     <div class="panel-heading">
@@ -194,12 +194,12 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
                     </div>
                     <div class="panel-body">
                         <ul class="p-0 x-0">
-                                                        <li class="py-2"><a href="/free-nodes/2025-9-18-free-node-subscribe.htm">翻墙节点 | 9月18日22M/S|免费Clash/Shadowrocket/V2ray/SSR节点机场分享</a></li>
-                                                        <li class="py-2"><a href="/free-nodes/2025-9-17-free-v2ray.htm">翻墙节点 | 9月17日19.7M/S|免费Shadowrocket/Clash/V2ray/SSR节点机场分享</a></li>
-                                                        <li class="py-2"><a href="/free-nodes/2025-9-16-free-v2ray-subscribe.htm">翻墙节点 | 9月16日19M/S|免费Shadowrocket/Clash/SSR/V2ray节点机场分享</a></li>
-                                                        <li class="py-2"><a href="/free-nodes/2025-9-15-free-v2ray-subscribe.htm">翻墙节点 | 9月15日21.6M/S|免费Shadowrocket/V2ray/SSR/Clash节点机场分享</a></li>
-                                                        <li class="py-2"><a href="/free-nodes/2025-9-14-free-v2ray.htm">翻墙节点 | 9月14日21.4M/S|免费Shadowrocket/Clash/SSR/V2ray节点机场分享</a></li>
-                                                        <li class="py-2"><a href="/free-nodes/2025-9-13-free-high-speed-nodes.htm">翻墙节点 | 9月13日21M/S|免费Clash/V2ray/SSR/Shadowrocket节点机场分享</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-9-18-free-node-subscribe.htm">翻墙节点 | 9月18日22M/S|免费Clash节点/Shadowrocket节点/V2ray节点/SSR节点机场分享</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-9-17-free-v2ray.htm">翻墙节点 | 9月17日19.7M/S|免费Shadowrocket节点/Clash节点/V2ray节点/SSR节点机场分享</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-9-16-free-v2ray-subscribe.htm">翻墙节点 | 9月16日19M/S|免费Shadowrocket节点/Clash节点/SSR/V2ray节点机场分享</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-9-15-free-v2ray-subscribe.htm">翻墙节点 | 9月15日21.6M/S|免费Shadowrocket节点/V2ray节点/SSR/Clash节点机场分享</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-9-14-free-v2ray.htm">翻墙节点 | 9月14日21.4M/S|免费Shadowrocket节点/Clash节点/SSR/V2ray节点机场分享</a></li>
+                                                        <li class="py-2"><a href="/free-nodes/2025-9-13-free-high-speed-nodes.htm">翻墙节点 | 9月13日21M/S|免费Clash节点/V2ray节点/SSR/Shadowrocket节点机场分享</a></li>
                                                     </ul>
                     </div>
                 </div>
@@ -211,16 +211,16 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/news/article-151610.htm" title="深度解析芥子空间：科学上网的安全性与使用方法全面指南">深度解析芥子空间：科学上网的安全性与使用方法全面指南</a></li>
-                        <li class="py-2"><a href="/news/article-150179.htm" title="任天堂Switch科学上网全攻略：手把手教你用V2Ray突破网络限制">任天堂Switch科学上网全攻略：手把手教你用V2Ray突破网络限制</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-9-17-free-v2ray.htm" title="翻墙节点 | 9月17日19.7M/S|免费Shadowrocket/Clash/V2ray/SSR节点机场分享">翻墙节点 | 9月17日19.7M/S|免费Shadowrocket/Clash/V2ray/SSR节点机场分享</a></li>
-                        <li class="py-2"><a href="/news/article-143454.htm" title="解锁网络自由：Shadowrocket SSR配置全攻略与深度体验">解锁网络自由：Shadowrocket SSR配置全攻略与深度体验</a></li>
-                        <li class="py-2"><a href="/news/article-149596.htm" title="安卓用户必备：手把手教你手动配置v2rayng实现安全高速上网">安卓用户必备：手把手教你手动配置v2rayng实现安全高速上网</a></li>
-                        <li class="py-2"><a href="/news/article-145943.htm" title="突破网络限制：iOS设备上免费使用V2Ray的完整指南">突破网络限制：iOS设备上免费使用V2Ray的完整指南</a></li>
-                        <li class="py-2"><a href="/news/article-149230.htm" title="突破网络壁垒：全面解析Shadowrocket故障排除与优化指南">突破网络壁垒：全面解析Shadowrocket故障排除与优化指南</a></li>
-                        <li class="py-2"><a href="/news/article-154527.htm" title="全面解析：手机与电脑连接冲突问题解决全攻略">全面解析：手机与电脑连接冲突问题解决全攻略</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-9-17-free-v2ray.htm" title="翻墙节点 | 9月17日19.7M/S|免费Shadowrocket节点/Clash节点/V2ray节点/SSR节点机场分享">翻墙节点 | 9月17日19.7M/S|免费Shadowrocket节点/Clash节点/V2ray节点/SSR节点机场分享</a></li>
+                        <li class="py-2"><a href="/news/article-142395.htm" title="深度解析v2rayng：现代网络环境下的安全盾牌与隐私守护者">深度解析v2rayng：现代网络环境下的安全盾牌与隐私守护者</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-9-15-free-v2ray-subscribe.htm" title="翻墙节点 | 9月15日21.6M/S|免费Shadowrocket节点/V2ray节点/SSR/Clash节点机场分享">翻墙节点 | 9月15日21.6M/S|免费Shadowrocket节点/V2ray节点/SSR/Clash节点机场分享</a></li>
                         <li class="py-2"><a href="/news/article-153803.htm" title="突破数字边界：全方位科学上网工具与谷歌访问终极指南">突破数字边界：全方位科学上网工具与谷歌访问终极指南</a></li>
-                        <li class="py-2"><a href="/news/article-153426.htm" title="从微博洞察Shadowrocket开发团队的运营智慧与用户生态构建">从微博洞察Shadowrocket开发团队的运营智慧与用户生态构建</a></li>
+                        <li class="py-2"><a href="/news/article-154527.htm" title="全面解析：手机与电脑连接冲突问题解决全攻略">全面解析：手机与电脑连接冲突问题解决全攻略</a></li>
+                        <li class="py-2"><a href="/news/article-151232.htm" title="深度解析管道冲突报告：从成因到解决方案的全方位指南">深度解析管道冲突报告：从成因到解决方案的全方位指南</a></li>
+                        <li class="py-2"><a href="/news/article-148494.htm" title="掌握网络脉搏：Shadowrocket网速显示功能全方位解析与实战指南">掌握网络脉搏：Shadowrocket网速显示功能全方位解析与实战指南</a></li>
+                        <li class="py-2"><a href="/news/article-145267.htm" title="深度探索vmess PC端：从零开始掌握高效代理工具的全方位指南">深度探索vmess PC端：从零开始掌握高效代理工具的全方位指南</a></li>
+                        <li class="py-2"><a href="/news/article-152713.htm" title="Clash中文版终极指南：从入门到精通的全方位解析">Clash中文版终极指南：从入门到精通的全方位解析</a></li>
+                        <li class="py-2"><a href="/news/article-146729.htm" title="P40 V2Ray深度解析：从入门到精通的全方位网络自由指南">P40 V2Ray深度解析：从入门到精通的全方位网络自由指南</a></li>
                     </ul>
     </div>
 </div>
